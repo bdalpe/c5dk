@@ -1,0 +1,29 @@
+{
+  "name": "c5dk",
+  "version": "0.0.1",
+  "description": "Cloud Development Kit for Cribl",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "build": "tsup",
+    "types": "tsc --emitDeclarationOnly --declaration"
+  },
+  "author": "Brendan Dalpe (bdalpe@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.3.0",
+    "@vitest/coverage-v8": "^2.0.5",
+    "esbuild": "^0.23.0",
+    "memfs": "^4.11.1",
+    "tsup": "^8.2.4",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "constructs": "^10.3.0",
+    "js-yaml": "^4.1.0"
+  }
+}

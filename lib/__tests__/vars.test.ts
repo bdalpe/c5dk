@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { fs, vol } from 'memfs'
-import {Cribl} from "../cribl";
-import {Variable} from "../cribl/objects/variable";
-import {WorkerGroup} from "../cribl/objects/group";
+import {Cribl} from "../index";
+import {Variable} from "../objects/variable";
+import {WorkerGroup} from "../objects/group";
 
 vi.mock('node:fs');
 vi.mock('node:fs/promises');

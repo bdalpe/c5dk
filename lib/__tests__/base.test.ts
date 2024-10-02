@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Cribl } from '../cribl';
+import { Cribl } from '../index';
 import { Construct } from 'constructs';
 
 describe('Cribl', () => {

@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`scripts > should be written to the file 1`] = `
+"test:
+  command: echo
+  args:
+    - hello
+    - $HELLO
+  env:
+    HELLO: world
+"
+`;

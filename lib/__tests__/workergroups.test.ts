@@ -1,6 +1,5 @@
 import {describe, it, expect, vi, beforeEach} from 'vitest';
 import {Cribl, Variable} from '../index';
-import { Construct } from 'constructs';
 import {vol} from "memfs";
 import {WorkerGroup} from "../objects/group";
 

@@ -1,7 +1,7 @@
 import {it, expect, vi, beforeEach, describe} from 'vitest';
 import {vol} from 'memfs'
 import {Cribl} from "../index";
-import {Script} from "../objects/scripts";
+import {Script} from "../objects";
 
 vi.mock('node:fs');
 vi.mock('node:fs/promises');

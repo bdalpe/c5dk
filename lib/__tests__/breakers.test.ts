@@ -1,7 +1,7 @@
 import {describe, it, expect, vi, beforeEach} from 'vitest';
 import {vol} from 'memfs'
 import {Cribl} from "../index";
-import {EventBreakerRule, EventBreakerRuleset} from "../objects/breaker";
+import {EventBreakerRule, EventBreakerRuleset} from "../objects";
 
 vi.mock('node:fs');
 vi.mock('node:fs/promises');

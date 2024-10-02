@@ -34,3 +34,11 @@ export class Cribl extends ContainerConstruct {
 		this.outdir = props?.outdir ?? process.env.CRIBL_OUTDIR ?? join(process.cwd(), 'dist');
 	}
 }
+
+export * from './config';
+export * from './container';
+export * from './objects';
+export * from './types';
+
+export * from './objects/input/splunk_tcp'
+export * from './objects/input/syslog'

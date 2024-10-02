@@ -1,4 +1,4 @@
-import {Cribl, SyslogInput} from "c5dk";
+import {Cribl, SyslogInput} from "@bdalpe/c5dk";
 
 const cribl = new Cribl();
 new SyslogInput(cribl, 'in_syslog_c5dk', {port: 9514});

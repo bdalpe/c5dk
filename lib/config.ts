@@ -37,4 +37,6 @@ export abstract class ConfigConstruct extends Construct {
 			...paths
 		)
 	}
+
+	synth(): void {}
 }

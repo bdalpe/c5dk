@@ -1,0 +1,6 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Pipelines > should only write the pipelines/$PIPELINE/conf.yml 1`] = `
+"{}
+"
+`;

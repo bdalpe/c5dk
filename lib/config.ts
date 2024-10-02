@@ -20,7 +20,7 @@ export abstract class ConfigConstruct extends Construct {
 		return this._config;
 	}
 
-	static dump(config: ConfigConstruct[]): Record<string, unknown> {
+	static dump(config: ConfigConstruct[]): Record<string, unknown> | undefined {
 		return {
 			[this.prototype.kind]: config.map(c => ({[c.node.id]: c.config}))
 		}

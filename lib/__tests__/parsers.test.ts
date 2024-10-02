@@ -1,7 +1,7 @@
 import {it, expect, vi, beforeEach, describe} from 'vitest';
 import {vol} from 'memfs'
 import {Cribl} from "../index";
-import {Script} from "../objects";
+import {Parser} from "../objects";
 
 vi.mock('node:fs');
 vi.mock('node:fs/promises');
@@ -15,13 +15,13 @@ beforeEach(() => {
 	cribl = new Cribl({outdir: '/tmp'});
 });
 
-describe('scripts', () => {
+describe('Parsers', () => {
 	it('should be written to the file', () => {
-		new Script(cribl, 'test', {command: 'echo', args: ['hello', '$HELLO'], env: {HELLO: 'world'}});
+		new Parser(cribl, 'test', {lib: 'test', type: 'test', fields: ['test1', 'test2']});
 		cribl.synth();
 
 		const volume = vol.toJSON();
-		expect(Object.keys(volume)).toEqual(['/tmp/local/cribl/scripts.yml']);
-		expect(volume['/tmp/local/cribl/scripts.yml']).toMatchSnapshot();
-	})
-})
+		expect(Object.keys(volume)).toEqual(['/tmp/local/cribl/parsers.yml']);
+		expect(volume['/tmp/local/cribl/parsers.yml']).toMatchSnapshot();
+	});
+});

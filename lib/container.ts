@@ -21,11 +21,19 @@ export abstract class ContainerConstruct extends Construct {
 			if (!c || c.length === 0) continue;
 
 			for (const config of c) {
-				// This is mostly no-op, but there are some resources that write files like samples and certificates
+				/*
+				 * This is mostly no-op, but there are some resources that write
+				 * files like samples, certificates, and pipelines
+				 */
 				config.synth();
 			}
 
-			new File(this.path('local', this.package, `${type}.yml`)).write(this.toYaml(clazz.dump(c)));
+			// Handle scenario where the default config file isn't used (see pipelines)
+			const output = clazz.dump(c);
+
+			if (output) {
+				new File(this.path('local', this.package, `${type}.yml`)).write(this.toYaml(output));
+			}
 		}
 
 		const contexts = this.node.children.filter(child => child instanceof ContainerConstruct);

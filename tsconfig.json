@@ -7,5 +7,7 @@
 
     "strict": true,                                      /* Enable all strict type-checking options. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+  },
+  "include": ["lib/**/*.ts"],                               /* Specify an array of glob patterns that match files to include in the program. */
+  "exclude": ["node_modules", "lib/__tests__/*", "lib/__mocks__/*"]  /* Specify an array of glob patterns that match files to exclude from the program. */
 }

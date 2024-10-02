@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Parsers > should be written to the file 1`] = `
+"test:
+  lib: test
+  type: test
+  fields:
+    - test1
+    - test2
+"
+`;

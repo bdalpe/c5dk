@@ -12,7 +12,7 @@
   "author": "Brendan Dalpe (bdalpe@gmail.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bdalpe/c5dk.git"
+    "url": "git+https://github.com/bdalpe/c5dk.git"
   },
   "license": "MIT",
   "devDependencies": {

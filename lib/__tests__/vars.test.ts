@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { fs, vol } from 'memfs'
+import { it, expect, vi, beforeEach } from 'vitest';
+import { vol } from 'memfs'
 import {Cribl} from "../index";
 import {Variable} from "../objects/variable";
 import {WorkerGroup} from "../objects/group";

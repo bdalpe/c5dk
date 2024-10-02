@@ -1,5 +1,5 @@
 import {describe, it, expect, vi, beforeEach} from 'vitest';
-import {fs, vol} from 'memfs'
+import {vol} from 'memfs'
 import {Cribl} from "../index";
 import {EventBreakerRule, EventBreakerRuleset} from "../objects/breaker";
 

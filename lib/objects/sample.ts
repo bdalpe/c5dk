@@ -1,5 +1,5 @@
-import {File} from "../../private/fs";
-import {createReadStream, PathLike, PathOrFileDescriptor, readFileSync, statSync} from "node:fs";
+import {File} from "../private/fs";
+import {createReadStream, PathLike, statSync} from "node:fs";
 import {basename} from "node:path";
 import {Encoding} from "node:crypto";
 import {ConfigConstruct} from "../config";

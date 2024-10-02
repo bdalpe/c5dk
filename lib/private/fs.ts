@@ -1,4 +1,4 @@
-import {writeFileSync, mkdirSync, readdirSync, lstatSync} from "node:fs";
+import {writeFileSync, mkdirSync} from "node:fs";
 import {dirname} from 'node:path';
 
 export class File {

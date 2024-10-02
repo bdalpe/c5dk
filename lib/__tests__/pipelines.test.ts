@@ -1,7 +1,6 @@
 import {it, expect, vi, beforeEach, describe} from 'vitest';
 import {vol} from 'memfs'
 import {Cribl} from "../index";
-import {Regex} from "../objects";
 import {Pipeline} from "../objects/pipeline";
 
 vi.mock('node:fs');

@@ -1,6 +1,6 @@
 {
   "name": "@bdalpe/c5dk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cloud Development Kit for Cribl",
   "main": "index.js",
   "scripts": {

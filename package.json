@@ -1,6 +1,6 @@
 {
   "name": "@bdalpe/c5dk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Cloud Development Kit for Cribl",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,8 @@
     "coverage": "vitest run --coverage",
     "build": "tsup",
     "types": "tsc --emitDeclarationOnly --declaration --outDir dist",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "deps": "madge --circular --extensions ts lib"
   },
   "author": "Brendan Dalpe (bdalpe@gmail.com)",
   "repository": {

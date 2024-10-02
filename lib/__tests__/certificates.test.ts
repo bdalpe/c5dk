@@ -18,12 +18,12 @@ beforeEach(() => {
 describe('Certificates', () => {
 	it('should be written to the file', () => {
 		const certificate = `-----BEGIN PRIVATE KEY-----
-		test
-		-----END PRIVATE KEY-----`
+test
+-----END PRIVATE KEY-----`
 
 		const privateKey = `-----BEGIN PRIVATE KEY-----
-		test
-		-----END PRIVATE KEY-----`
+test
+-----END PRIVATE KEY-----`
 
 		new Certificate(cribl, 'goat', {certificate, privateKey});
 

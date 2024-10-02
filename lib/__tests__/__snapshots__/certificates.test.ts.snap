@@ -7,12 +7,12 @@ exports[`Certificates > should be written to the file 1`] = `
 
 exports[`Certificates > should be written to the file 2`] = `
 "-----BEGIN PRIVATE KEY-----
-		test
-		-----END PRIVATE KEY-----"
+test
+-----END PRIVATE KEY-----"
 `;
 
 exports[`Certificates > should be written to the file 3`] = `
 "-----BEGIN PRIVATE KEY-----
-		test
-		-----END PRIVATE KEY-----"
+test
+-----END PRIVATE KEY-----"
 `;

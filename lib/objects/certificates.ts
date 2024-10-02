@@ -12,12 +12,28 @@ export interface CertificateProps {
 	 */
 	description?: string;
 
+	/**
+	 * The certificate in PEM/Base64 format.
+	 */
 	certificate: string;
 
+	/**
+	 * The private key in PEM/Base64 format.
+	 */
 	privateKey: string;
 
+	/**
+	 * The passphrase for the private key.
+	 *
+	 * Optional.
+	 */
 	passphrase?: string;
 
+	/**
+	 * The CA certificate in PEM/Base64 format.
+	 *
+	 * Optional.
+	 */
 	caCert?: string;
 }
 

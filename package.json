@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "constructs": "^10.3.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "madge": "^8.0.0"
   }
 }

@@ -1,4 +1,5 @@
-import {Construct} from "constructs";
+import {join} from "node:path";
+import {ContainerConstruct} from "./container";
 
 export interface CriblProps {
 	/**
@@ -16,7 +17,7 @@ export interface CriblProps {
  * ```typescript
  * const cribl = new Cribl();
  *
- * // add your config here using cribl as the
+ * // add your config here using cribl as the scope
  * // const group = new Group(cribl, 'default', {});
  * // ...
  *
@@ -24,13 +25,12 @@ export interface CriblProps {
  * cribl.synth();
  * ```
  */
-export class Cribl extends Construct {
-    public readonly outdir: string;
+export class Cribl extends ContainerConstruct {
+	kind = '';
+	public readonly outdir: string;
 
 	constructor(props?: CriblProps) {
 		super(undefined as any, '');
-		this.outdir = props?.outdir ?? process.env.CRIBL_OUTDIR ?? 'dist';
+		this.outdir = props?.outdir ?? process.env.CRIBL_OUTDIR ?? join(process.cwd(), 'dist');
 	}
 }
-
-export * from "./objects";

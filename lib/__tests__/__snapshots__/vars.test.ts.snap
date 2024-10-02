@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should be in a worker group 1`] = `
+"test:
+  type: expression
+  value: test
+"
+`;
+
+exports[`should handle multiple variables 1`] = `
+"test:
+  type: expression
+  value: test
+test2:
+  type: expression
+  value: test2
+"
+`;
+
+exports[`should write a file 1`] = `
+"test:
+  type: expression
+  value: test
+"
+`;
+
+exports[`should write a file with arguments 1`] = `
+"test:
+  type: expression
+  value: test
+  args:
+    - type: expression
+      name: test
+"
+`;

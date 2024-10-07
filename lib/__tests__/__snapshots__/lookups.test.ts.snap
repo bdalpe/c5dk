@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Lookups > should only write the pipelines/$PIPELINE/conf.yml 1`] = `
+"id,value
+1,test
+2,goat
+"
+`;
+
+exports[`Lookups > should only write to data/lookups/{id} 1`] = `
+"id,value
+1,test
+2,goat
+"
+`;
+
+exports[`Lookups > should use the correct extension 1`] = `
+"id,value
+1,test
+2,goat
+"
+`;

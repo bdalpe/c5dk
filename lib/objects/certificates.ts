@@ -56,6 +56,18 @@ export class Certificate extends ConfigConstruct {
 		return 'certificates';
 	}
 
+	get certPath() {
+		return this.path('local', 'cribl', 'auth', 'certs', `${this.node.id}.pem`);
+	}
+
+	get privKeyPath() {
+		return this.path('local', 'cribl', 'auth', 'certs', `${this.node.id}.key`);
+	}
+
+	get caPath() {
+		return this.path('local', 'cribl', 'auth', 'certs', `${this.node.id}.crt`);
+	}
+
 	synth(): void {
 		new File(this.path('local', 'cribl', 'auth', 'certs', `${this.node.id}.pem`)).write(this.certificate);
 		new File(this.path('local', 'cribl', 'auth', 'certs', `${this.node.id}.key`)).write(this.privateKey);

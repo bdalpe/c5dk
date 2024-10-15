@@ -1,18 +1,31 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Inputs > should register the inputs 1`] = `
+exports[`Inputs > should handle a certificate 1`] = `
 "inputs:
   - cribl_http:
       type: cribl_http
-      mocked: true
-      config:
-        value: string
-        array:
-          - 1
-          - '2'
-          - value: 3
-  - cribl_tcp:
-      type: cribl_tcp
-      mocked: true
+      port: 1234
+      tls:
+        disabled: false
+        certificateName: goat
+        privKeyPath: /tmp/local/cribl/auth/certs/goat.key
+        certPath: /tmp/local/cribl/auth/certs/goat.pem
+"
+`;
+
+exports[`Inputs > should register the inputs 1`] = `
+"inputs:
+  cribl_tcp:
+    type: cribl_tcp
+    port: 1234
+    metadata:
+      - name: name
+        value: value
+  cribl_http:
+    type: cribl_http
+    port: 1234
+    metadata:
+      - name: name
+        value: value
 "
 `;

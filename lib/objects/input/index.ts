@@ -12,6 +12,13 @@ export abstract class Input extends ConfigConstruct {
 	get kind() {
 		return 'inputs';
 	}
+
+	get config() {
+		return {
+			type: this.kind,
+			...super.config
+		}
+	}
 }
 
 // Register Input class in the registry

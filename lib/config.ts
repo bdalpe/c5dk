@@ -4,7 +4,7 @@ import {join} from "node:path";
 import {Cribl} from "./index";
 import {ContainerConstruct} from "./container";
 
-interface ConstructProps {}
+export interface ConstructProps {}
 
 export abstract class ConfigConstruct extends Construct {
 	protected _config = {};
@@ -22,7 +22,7 @@ export abstract class ConfigConstruct extends Construct {
 
 	static dump(config: ConfigConstruct[]): Record<string, unknown> | undefined {
 		return {
-			[this.prototype.kind]: config.map(c => ({[c.node.id]: c.config}))
+			[this.prototype.kind]: config.reduce((prev, curr) => ({[curr.node.id]: curr.config, ...prev}), {})
 		}
 	}
 

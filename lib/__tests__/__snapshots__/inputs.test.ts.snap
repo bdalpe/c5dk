@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Inputs > should register the inputs 1`] = `
+"inputs:
+  - cribl_http:
+      type: cribl_http
+      mocked: true
+      config:
+        value: string
+        array:
+          - 1
+          - '2'
+          - value: 3
+  - cribl_tcp:
+      type: cribl_tcp
+      mocked: true
+"
+`;

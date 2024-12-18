@@ -1,7 +1,7 @@
 import {it, expect, vi, beforeEach, describe} from 'vitest';
 import {vol} from 'memfs'
 import {Cribl} from "../index";
-import {Lookup} from "../objects/lookups";
+import {Lookup} from "../objects";
 import {load} from "js-yaml";
 
 vi.mock('node:fs');

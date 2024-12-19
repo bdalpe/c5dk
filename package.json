@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "constructs": "^10.3.0",
+    "deepmerge": "^4.3.1",
     "es-toolkit": "^1.23.0",
     "isomorphic-git": "^1.27.2",
     "js-yaml": "^4.1.0",

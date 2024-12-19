@@ -23,13 +23,14 @@
 
 import {ConfigConstruct} from "../../config";
 import {Construct} from "constructs";
-import {File} from "../../private/fs";
+import {File, MergeFile} from "../../private/fs";
 import Registry from "../../registry";
 import {PackFetcher} from "./fetchers";
 import {FilePackFetcher} from "./fetchers/file";
 import {URLPackFetcher} from "./fetchers/url";
 import {DispensaryPatchFetcher} from "./fetchers/dispensary";
 import {GitPackFetcher} from "./fetchers/git";
+import {basename} from "node:path"
 
 export class Pack extends ConfigConstruct {
 	protected fetcher: PackFetcher;
@@ -77,6 +78,14 @@ export class Pack extends ConfigConstruct {
 
 			new File(this.path('default', this.node.id, 'README.md')).write(vol.readFileSync('/README.md'));
 			new File(this.path('default', this.node.id, 'package.json')).write(vol.readFileSync('/package.json'));
+
+			const dependency = {
+				'dependencies': {
+					[this.node.id]: `file:${this.path('state', 'packs', basename(this.path1))}`
+				}
+			}
+
+			new MergeFile(this.path('package.json')).write(JSON.stringify(dependency))
 		})
 			.catch((err) => {
 				console.error(err);

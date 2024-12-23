@@ -50,6 +50,6 @@ it('should be in a worker group', () => {
 	cribl.synth();
 
 	const volume = vol.toJSON();
-	expect(Object.keys(volume)).toEqual(['/tmp/groups/goat/local/cribl/vars.yml']);
+	expect(Object.keys(volume)).toEqual(expect.arrayContaining(['/tmp/groups/goat/local/cribl/vars.yml']));
 	expect(volume['/tmp/groups/goat/local/cribl/vars.yml']).toMatchSnapshot();
 });

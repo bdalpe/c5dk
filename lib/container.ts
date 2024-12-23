@@ -1,17 +1,14 @@
-import {join} from "node:path";
-import {Construct} from "constructs";
 import Registry from "./registry";
 import {File} from "./private/fs";
-import {dump} from "js-yaml";
-import {Cribl} from "./index";
 import {ConfigConstruct} from "./config";
 
-export abstract class ContainerConstruct extends Construct {
+export abstract class ContainerConstruct extends ConfigConstruct {
 	package = 'cribl';
 	abstract kind: string;
 
 	synth() {
 		const types = Registry.registry;
+		const containers = Registry.containerRegistry;
 
 		const configs = this.node.children.filter(child => child instanceof ConfigConstruct);
 
@@ -32,7 +29,7 @@ export abstract class ContainerConstruct extends Construct {
 			const output = clazz.dump(c);
 
 			if (output) {
-				new File(this.path('local', this.package, `${type}.yml`)).write(this.toYaml(output));
+				new File(this.path('local', clazz.package ?? this.package, `${type}.yml`)).write(this.toYaml(output));
 			}
 		}
 
@@ -41,18 +38,18 @@ export abstract class ContainerConstruct extends Construct {
 		for (const context of contexts) {
 			context.synth();
 		}
-	}
 
-	toYaml(obj: unknown): string {
-		return dump(obj);
-	}
+		for (const [type, clazz] of Object.entries(containers)) {
+			const c = contexts.filter(child => child instanceof containers[type as keyof typeof containers]);
 
-	path(...paths: string[]) {
-		return join(
-			(this.node.root as Cribl)['outdir'],
-			...this.node.scopes.slice(1).filter(x => x instanceof ContainerConstruct).flatMap(scope => [ContainerConstruct.plural(scope.kind), scope.node.id]),
-			...paths
-		)
+			if (!c || c.length === 0) continue;
+
+			const output = clazz.dump(c);
+
+			if (output) {
+				new File(this.path('local', this.package, `${type}.yml`)).write(this.toYaml(output));
+			}
+		}
 	}
 
 	static plural(noun: string) {

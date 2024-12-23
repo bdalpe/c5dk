@@ -8,6 +8,7 @@ interface ConstructProps {}
 
 export abstract class ConfigConstruct extends Construct {
 	protected _config = {};
+	static package: string | undefined;
 
 	constructor(scope: Construct, id: string, props: ConstructProps) {
 		super(scope, id);

@@ -30,7 +30,7 @@ export class Cribl extends ContainerConstruct {
 	public readonly outdir: string;
 
 	constructor(props?: CriblProps) {
-		super(undefined as any, '');
+		super(undefined as any, '', props ?? {});
 		this.outdir = props?.outdir ?? process.env.CRIBL_OUTDIR ?? join(process.cwd(), 'dist');
 	}
 }

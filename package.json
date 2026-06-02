@@ -33,7 +33,7 @@
     "tsup": "^8.2.4",
     "tsx": "^4.17.0",
     "typescript": "^5.5.4",
-    "vitest": "^3.0.0"
+    "vitest": "^4.0.0"
   },
   "dependencies": {
     "constructs": "^10.3.0",
